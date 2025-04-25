@@ -1,0 +1,20 @@
+.loader {
+    margin :0;
+    padding:10px;
+    width: fit-content;
+    font-weight: bold;
+    font-family: sans-serif;
+    font-size: 30px;
+    padding-bottom: 8px;
+    background: linear-gradient(currentColor 0 0) 0 100%/0% 3px no-repeat;
+    animation: l2 2s linear infinite;
+  }
+  .loader:before {
+    content:"CAGANDO.... ATRAPALOS A TODOS !!!"
+  }
+  @keyframes l2 {to{background-size: 100% 3px}}
+
+  .helper{
+    width: auto;
+    height: 100px;
+  }

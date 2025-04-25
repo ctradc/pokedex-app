@@ -1,0 +1,123 @@
+*{
+  margin:0;
+  padding:0;
+}
+
+/* Contenedor principal para tarjetas en formato horizontal */
+.title{
+    text-align: center;
+}
+
+.grid-container {
+    display: flex; /* Alineación horizontal */
+    justify-content: center; /* Centrar tarjetas en el contenedor */
+    gap: 40px; /* Espacio entre tarjetas */
+    flex-wrap: wrap; 
+  }
+  
+  /* Estilo del contenedor principal de cada tarjeta */
+  .pokemon-card {
+    position: relative;
+    width: 200px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    text-align: center;
+    margin: 10px 0; 
+  }
+  
+  /* Número de la esquina izquierda */
+  .number {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  /* Imagen en el centro */
+  .image-container {
+    margin: 20px 0;
+  }
+  
+  .pokemon-image {
+    width: 150px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Nombre debajo de la imagen */
+  .name h3 {
+    font-size: 18px;
+    margin: 10px 0;
+    color: #333;
+    font-weight: bold;
+  }
+  
+  /* Contenedor de datos */
+  .stats {
+    display: flex;
+    justify-content: space-around; /* Espaciado entre las columnas */
+    margin-top: 20px;
+  }
+  
+  /* Cada dato */
+  .stat {
+    text-align: center;
+    flex: 1;
+  }
+  
+  /* Título del dato */
+  .stat-title {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  /* Valor del */
+  .stat-value {
+    font-size: 18px;
+    color: #007BFF;
+    font-weight: bold;
+  }
+  
+  /* Media query para pantallas pequeñas */
+  @media (max-width: 768px) {
+    .cards-container {
+        flex-wrap: wrap; 
+        justify-content: center; 
+    }
+  
+    .pokemon-card {
+        width: 100%; /* Ocupa todo el ancho disponible */
+        margin: 15px auto; /* Espaciado entre tarjetas */
+    }
+  
+    .pokemon-image {
+        width: 250px; /* Reducir tamaño de la imagen en pantallas pequeñas */
+        background-color: transparent;
+    }
+  }
+
+/*color de fondo rojo*/
+.grid-container{
+  background-color: rgb(212, 64, 64);
+}
+.title{
+  color: white;
+  font: oblique bold 200% cursive;
+
+  background-color: rgb(212, 64, 64);
+  padding: 0;
+  margin: 0;
+}
+
+p{
+  font: oblique bold 120% cursive;
+}
+
+
