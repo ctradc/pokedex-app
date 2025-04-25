@@ -4,6 +4,7 @@ import Loader from './component/loader';
 function App() {
 
     const [pokemonData, setPokemonData] = useState([]);
+    localStorage.setItem('alreadyTriggered','false');
 
     const GottaFetchEmAll = async () => {
         let cachedData =false;
@@ -52,7 +53,10 @@ function App() {
         const valor = localStorage.getItem(clave);
         if(clave!=="pageReloaded"){
           if(clave!=="offset"){
-            datosLocalStorage.push(JSON.parse(valor));
+            if(clave!=="alreadyTriggered"){
+              datosLocalStorage.push(JSON.parse(valor));
+            }
+            
           }
         }
       }
@@ -62,10 +66,12 @@ function App() {
   };
     
     const handleScroll = () => {
-        if(window.innerHeight+document.documentElement.scrollTop+1>=document.documentElement.scrollHeight){
+        if(localStorage.getItem('alreadyTriggered')==='false'&&window.innerHeight+document.documentElement.scrollTop+1>=document.documentElement.scrollHeight){
           GottaFetchEmAll();
+          localStorage.setItem('alreadyTriggered','true');
+        }else{
+          localStorage.setItem('alreadyTriggered','false');
         }
-        
     };
 
     useEffect(() => {
@@ -81,7 +87,10 @@ function App() {
       } else {
         localStorage.setItem('pageReloaded', 'true');
         localStorage.setItem('offset', "0");
-        GottaFetchEmAll();
+
+          GottaFetchEmAll();
+
+        
         
       }
     },[]);
